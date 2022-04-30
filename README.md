@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# About Project
+Task is given by Xcoins to showcase Currency Exchange Functionality using CRA (Create React App)
+
+## Scenario - user has three wallets:
+
+USD (initial balance $200)
+EUR (initial balance €150)
+GBP (initial balance £10)
+
+## Criteria:
+
+Switch wallets e.g: EUR > GBP., GBP > USD., USD > EUR.
+Enter the desired amount to exchange and has a CTA (call-to-action) to conclude the transaction.
+Use this (https://exchangeratesapi.io/documentation/) or similar API to get the conversion rates.
+Wallet balances are updated correctly.
+Show an error message when the desired exchange amount exceeds the current balance.$
+
+## Demo URL
+
+
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
