@@ -18,6 +18,7 @@ const Display = () =>{
     const dispatch = useDispatch()
     const exchangeRateState = useSelector(state=>state.getEchangeRateReducer)
 
+    const { USDBal, EURBal, GBPBal } = exchangeRateState
     const [outbound,setOutbound] = React.useState({currency:'USD',amount:0})
     const [inbound,setInbound] = React.useState({currency:'EUR',amount:0})
 
@@ -31,6 +32,11 @@ const Display = () =>{
             setInbound({...inbound,amount:rate})
         }
     },[exchangeRateState.data])
+
+    React.useEffect(()=>{
+        setOutbound({...outbound,amount:0})
+        setInbound({...inbound,amount:0})
+    },[USDBal,EURBal,GBPBal])
 
     const handleOutBoundDropDown=(e)=>{
         setOutbound({...outbound,currency:e.target.value})
