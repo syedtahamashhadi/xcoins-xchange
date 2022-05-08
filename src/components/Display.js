@@ -53,7 +53,7 @@ const Display = () =>{
     }
 
     const handleInboundAmountChange = (e) =>{
-        setInbound({...inbound,amount:e.target.value})
+        setInbound({...inbound,amount:+e.target.value})
         if(exchangeRateState?.data?.rates){
             let rate = exchangeRateState.data.rates[outbound.currency]*(exchangeRateState.data.rates[inbound.currency]*e.target.value)
             setOutbound({...outbound,amount:rate})
@@ -61,7 +61,7 @@ const Display = () =>{
     }
 
     const handleOutboundAmountChange = (e) =>{
-        setOutbound({...outbound,amount:e.target.value})
+        setOutbound({...outbound,amount:+e.target.value})
         if(exchangeRateState?.data?.rates){
             let rate = (exchangeRateState.data.rates[outbound.currency]*e.target.value)*exchangeRateState.data.rates[inbound.currency]
             setInbound({...inbound,amount:rate})
